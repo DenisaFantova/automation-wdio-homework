@@ -1,6 +1,6 @@
 ./reports
 ./reports/*
-./screenshots/*
+/screenshots/*
 
 # Logs
 logs

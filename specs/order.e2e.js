@@ -85,7 +85,7 @@ describe('Objednávka pro MŠ/ZŠ', () => {
     browser.saveScreenshot('submitOrder.png')
   })
 
-  it.only('nekompletně vyplněná objednávka', () => {
+  it('nekompletně vyplněná objednávka', () => {
     OrderPage.goToOrderPageViaUrl();
     OrderPage.setIcoAndWaitForAres(ICO);
     OrderPage.setSubstituteName(substituteName);

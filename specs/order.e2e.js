@@ -21,7 +21,7 @@ describe('Objednávka pro MŠ/ZŠ', () => {
   it('Existuje stránka pro objednávku', () => {
     OrderPage.goToOrderPageViaMenu();
     expect(OrderPage.icoField).toBeDisplayed();
-    browser.saveScreenshot('orderPage.png')
+    browser.saveScreenshot('screenshots/orderPage.png')
   })
 
   it('Automatické načtení jména a adresy odběratele z ARESu', () => {
@@ -31,7 +31,7 @@ describe('Objednávka pro MŠ/ZŠ', () => {
     expect(valueClient).toEqual(clientName)
     const valueAddress = getFieldValueById('address')
     expect(valueAddress).toEqual(address)
-    browser.saveScreenshot('dataFromARES.png')
+    browser.saveScreenshot('screenshots/dataFromARES.png')
   })
 
   it('Vyplnění přihlášky na příměstský tábor', () => {
@@ -74,7 +74,7 @@ describe('Objednávka pro MŠ/ZŠ', () => {
     expect(OrderPage.numberOfAdultsField).toBeDisplayed();
     OrderPage.setNumberOfAdult(5);
 
-    browser.saveScreenshot('filledForm.png')
+    browser.saveScreenshot('screenshots/filledForm.png')
 
     expect(OrderPage.buttonSubmitCamp).toBeClickable();
     OrderPage.submitFormCamp();
@@ -82,7 +82,7 @@ describe('Objednávka pro MŠ/ZŠ', () => {
     const newOrderSavedHeading = $('.section--orders').$('.card-body').$('h3');
     expect(newOrderSavedHeading).toHaveText('Děkujeme za objednávku');
 
-    browser.saveScreenshot('submitOrder.png')
+    browser.saveScreenshot('screenshots/submitOrder.png')
   })
 
   it('nekompletně vyplněná objednávka', () => {
@@ -98,7 +98,7 @@ describe('Objednávka pro MŠ/ZŠ', () => {
     const orderHeading = $('.section--orders').$('.card-body').$('h3');
     expect(orderHeading).toHaveText('Objednávka akce');
 
-    browser.saveScreenshot('noCompleteOrder.png');
+    browser.saveScreenshot('screenshots/noCompleteOrder.png');
   })
 
 });
